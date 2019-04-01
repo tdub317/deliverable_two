@@ -7,17 +7,30 @@ var tempErrorMsg = "Please enter a number";
 //Prompt questions and change event type to lower case
 var eventType = prompt(askEvent, "<event type goes here>");
 var etLower = eventType.toLowerCase();
+var eventCheck = ["casual", "semi-formal", "semiformal", "semi formal", "formal"];
 
 //Pop up error msg if questions aren't answered properly
-if (etLower != "casual" && etLower != "semi-formal" && etLower != "formal") {
-  alert(eventErrorMsg);
-}
-else {
+//if (etLower != "casual" && etLower != "semi-formal" && etLower != "semi formal" && etLower != "semiformal" && etLower != "formal") {
+//  alert(eventErrorMsg);
+//}
+//else {
+//  var tempFahr = prompt(askTemp, "temperature in F goes here>")
+//  if (tempFahr != parseFloat(tempFahr)) {
+//    alert(tempErrorMsg);
+//  }
+//}
+
+//Cleaned up above (commented) error msg conditional
+if (eventCheck.includes(etLower)) {
   var tempFahr = prompt(askTemp, "temperature in F goes here>")
   if (tempFahr != parseFloat(tempFahr)) {
     alert(tempErrorMsg);
   }
 }
+else {
+  alert(eventErrorMsg);
+}
+
 
 //Initialize response to make it easier to read
 var casualCold = "and you are going to a casual event, you should wear something comfy and a coat.";

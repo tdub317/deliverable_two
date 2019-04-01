@@ -22,7 +22,7 @@ var eventCheck = ["casual", "semi-formal", "semiformal", "semi formal", "formal"
 
 //Cleaned up above (commented) error msg conditional
 if (eventCheck.includes(etLower)) {
-  var tempFahr = prompt(askTemp, "temperature in F goes here>")
+  var tempFahr = prompt(askTemp, "<temperature in F goes here>")
   if (tempFahr != parseFloat(tempFahr)) {
     alert(tempErrorMsg);
   }

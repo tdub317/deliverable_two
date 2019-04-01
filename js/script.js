@@ -1,11 +1,15 @@
+//Initialize question and error msg variables
 var askEvent = "What type of event are you going to?";
 var askTemp = "What's the temperature in Fahrenheit today?";
 var eventErrorMsg = "Please enter an event type (casual / semi-formal / formal)";
 var tempErrorMsg = "Please enter a number";
 
+//Prompt questions and change event type to lower case
 var eventType = prompt(askEvent, "<event type goes here>");
+var etLower = eventType.toLowerCase();
 
-if (eventType != "casual" && eventType != "semi-formal" && eventType != "formal") {
+//Pop up error msg if questions aren't answered properly
+if (etLower != "casual" && etLower != "semi-formal" && etLower != "formal") {
   alert(eventErrorMsg);
 }
 else {
@@ -15,6 +19,7 @@ else {
   }
 }
 
+//Initialize response to make it easier to read
 var casualCold = "and you are going to a casual event, you should wear something comfy and a coat.";
 var casualWarm = "and you are going to a casual event, you should wear something comfy and a jacket.";
 var casualHot = "and you are going to a casual event, you should wear something comfy without a jacket.";
@@ -28,8 +33,8 @@ var result;
 var error = "Sorry, there has been an input error.";
 
 
-
-if (eventType == "casual") {
+//Conditional to determine what event/temperature and provide suggestion accordingly
+if (etLower == "casual") {
   if (tempFahr < 54) {
     var result = "Since it is " + tempFahr + " degrees " + casualCold;
     console.log(result);
@@ -46,7 +51,7 @@ if (eventType == "casual") {
     console.log(error);
   }
 }
-else if (eventType == "semi-formal" || eventType == "semi formal" || eventType == "semiformal") {
+else if (etLower == "semi-formal" || etLower == "semi formal" || etLower == "semiformal") {
   if (tempFahr < 54) {
     var result = "Since it is " + tempFahr + " degrees " + semiformalCold;
     console.log(result);
@@ -63,7 +68,7 @@ else if (eventType == "semi-formal" || eventType == "semi formal" || eventType =
     console.log(error);
   }
 }
-else if (eventType == "formal") {
+else if (etLower == "formal") {
     if (tempFahr < 54) {
       var result = "Since it is " + tempFahr + " degrees " + formalCold;
       console.log(result);

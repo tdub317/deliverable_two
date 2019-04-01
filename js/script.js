@@ -1,11 +1,12 @@
-//Initialize question and error msg variables
+//declared variables and initialize them with questions and error msgs
 var askEvent = "What type of event are you going to?";
 var askTemp = "What's the temperature in Fahrenheit today?";
 var eventErrorMsg = "Please enter an event type (casual / semi-formal / formal)";
-var tempErrorMsg = "Please enter a number";
+var tempErrorMsg = "Please enter temperature as numbers";
 
-//Prompt questions and change event type to lower case
-var eventType = prompt(askEvent, "<event type goes here>");
+//declared variables and initialize eventType (required)
+//also changed event type string to lower case
+var eventType = prompt(askEvent, "enter event type (casual / semi-formal / formal)");
 var etLower = eventType.toLowerCase();
 var eventCheck = ["casual", "semi-formal", "semiformal", "semi formal", "formal"];
 
@@ -20,9 +21,10 @@ var eventCheck = ["casual", "semi-formal", "semiformal", "semi formal", "formal"
 //  }
 //}
 
-//Cleaned up above (commented) error msg conditional
+//Cleaner version of what I was trying to achieve above (error msg)
 if (eventCheck.includes(etLower)) {
-  var tempFahr = prompt(askTemp, "<temperature in F goes here>")
+  //declared and initalized tempFahr (REQUIRED)
+  var tempFahr = prompt(askTemp, "<temperature in F goes here>");
   if (tempFahr != parseFloat(tempFahr)) {
     alert(tempErrorMsg);
   }
@@ -45,7 +47,10 @@ var formalHot = "and you are going to a formal event, you should wear a suit wit
 var result;
 var error = "Sorry, there has been an input error.";
 
-
+//declared and initalized result (REQUIRED); result is a single string but changes depending on condition
+//results are logged to console (REQUIRED)
+//casual event = something comfy (REQUIRED)
+//<54 degrees = a coat / >=54 && <=70 degrees = a jacket / >70 degrees = no jacket (REQUIRED)
 //Conditional to determine what event/temperature and provide suggestion accordingly
 if (etLower == "casual") {
   if (tempFahr < 54) {
@@ -64,6 +69,7 @@ if (etLower == "casual") {
     console.log(error);
   }
 }
+//semi-formal event = a polo (REQUIRED)
 else if (etLower == "semi-formal" || etLower == "semi formal" || etLower == "semiformal") {
   if (tempFahr < 54) {
     var result = "Since it is " + tempFahr + " degrees " + semiformalCold;
@@ -81,6 +87,7 @@ else if (etLower == "semi-formal" || etLower == "semi formal" || etLower == "sem
     console.log(error);
   }
 }
+//formal event = a suit (REQUIRED)
 else if (etLower == "formal") {
     if (tempFahr < 54) {
       var result = "Since it is " + tempFahr + " degrees " + formalCold;

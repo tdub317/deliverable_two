@@ -4,9 +4,9 @@ var askTemp = "What's the temperature in Fahrenheit today?";
 var eventErrorMsg = "Please enter an event type (casual / semi-formal / formal)";
 var tempErrorMsg = "Please enter temperature as numbers";
 
-//declared variables and initialize eventType (required)
+//declared variables and initialize eventType (REQUIRED)
 //also changed event type string to lower case
-var eventType = prompt(askEvent, "enter event type (casual / semi-formal / formal)");
+var eventType = prompt(askEvent, "<enter event type (casual / semi-formal / formal)>");
 var etLower = eventType.toLowerCase();
 var eventCheck = ["casual", "semi-formal", "semiformal", "semi formal", "formal"];
 
